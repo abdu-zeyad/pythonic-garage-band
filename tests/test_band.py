@@ -87,6 +87,14 @@ def test_individual_solos(one_band):
         elif member.get_instrument() == "drums":
             assert member.play_solo() == "rattle boom crash"
 
+# def one_band():
+#     some_band = Band(
+#         "Nirvana",
+#         [Guitarist("Kurt Cobain"), Bassist(
+#             "Krist Novoselic"), Drummer("Dave Grohl"), ],
+#     )
+#     return some_band
+
 
 def test_band_members(one_band):
 

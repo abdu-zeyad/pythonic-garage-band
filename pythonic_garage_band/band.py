@@ -52,8 +52,16 @@ class Musician():
         elif self.name == 'Dave Grohl':
             return 'rattle boom crash'
 
-# def test_play_solos_for_whole_band(mname):
-#     solos = mname.play_solos()
+# def one_band():
+#     some_band = Band(
+#         "Nirvana",
+#         [Guitarist("Kurt Cobain"), Bassist(
+#             "Krist Novoselic"), Drummer("Dave Grohl"), ],
+#     )
+#     return some_band
+
+# def test_play_solos_for_whole_band(one_band):
+#     solos = one_band.play_solos()
 #     assert len(solos) == 3
 #     assert solos[0] == "face melting guitar solo"
 #     assert solos[1] == "bom bom buh bom"
@@ -109,10 +117,5 @@ if __name__ == "__main__":
     Kurt_Cobain = Guitarist('Kurt Cobain')
     Krist_Novoselic = Drummer('Krist Novoselic')
     Dave_Grohl = Bassist('Dave Grohl')
-
-    nirvana = Band('nirvana', [])
-    nirvana.band_members(Kurt_Cobain)
-    nirvana.band_members(Krist_Novoselic)
-    nirvana.band_members(Dave_Grohl)
 
     print(Band.members)
