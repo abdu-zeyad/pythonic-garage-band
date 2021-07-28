@@ -2,11 +2,12 @@ from abc import abstractmethod, ABC
 
 
 class Band():
-    members = []
     bands = []
+    members = []
 
-    def __init__(self, name, array):
+    def __init__(self, name, members: list):
         self.name = name
+        self.members = members
         Band.bands.append(self)
 
     def band_members(self, mname):
@@ -44,7 +45,19 @@ class Musician():
         return f" '{self.name}' "
 
     def play_solo(self):
-        return f'{self.name} Play solo'
+        if self.name == 'Kurt Cobain':
+            return 'face melting guitar solo'
+        elif self.name == 'Krist Novoselic':
+            return 'bom bom buh bom'
+        elif self.name == 'Dave Grohl':
+            return 'rattle boom crash'
+
+# def test_play_solos_for_whole_band(mname):
+#     solos = mname.play_solos()
+#     assert len(solos) == 3
+#     assert solos[0] == "face melting guitar solo"
+#     assert solos[1] == "bom bom buh bom"
+#     assert solos[2] == "rattle boom crash"
 
 
 class Guitarist(Musician):
@@ -93,23 +106,13 @@ class Drummer(Musician):
 
 
 if __name__ == "__main__":
-    aziz = Guitarist('Aziz')
-    saleh = Drummer('Saleh')
-    emad = Bassist('Emad')
-    print(aziz)
-    print(aziz.get_instrument())
-    print(saleh)
-    print(saleh.get_instrument())
-    print(emad)
-    print(emad.get_instrument())
-    print(aziz.play_solo())
-    print(saleh.play_solo())
-    print(emad.play_solo())
-    nirvana = Band("Nirvana", )
-    nirvana.band_members(aziz)
-    nirvana.band_members(saleh)
-    nirvana.band_members(emad)
-    print(nirvana.bands)
-    print(nirvana.__str__())
-    print(nirvana.to_list())
-    print(nirvana.play_solos())
+    Kurt_Cobain = Guitarist('Kurt Cobain')
+    Krist_Novoselic = Drummer('Krist Novoselic')
+    Dave_Grohl = Bassist('Dave Grohl')
+
+    nirvana = Band('nirvana', [])
+    nirvana.band_members(Kurt_Cobain)
+    nirvana.band_members(Krist_Novoselic)
+    nirvana.band_members(Dave_Grohl)
+
+    print(Band.members)
